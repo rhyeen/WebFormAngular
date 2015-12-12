@@ -1,0 +1,40 @@
+<section class="create-input-item">
+  <label class="ui-accordion-header" ng-if="config.type === 'addAttribute'">
+    <span class="input-title input-add-attribute" ng-if="config.type === 'addAttribute'" ng-click="addAttributes()"><a href="">{{config.key}}</a></span>
+  </label>
+  <label class="ui-accordion-header" ng-if="config.type !== 'addAttribute'" ng-click="toggleTooltip()">
+    <span class="input-title">{{config.key}}:</span>
+    <span class="required" ng-if="config.required"> *</span>
+    <span class="mini_btn">
+      <div class="icon icon_inform">
+        <svg viewBox="0 0 32 32">
+          <use xlink:href="#question_icon"></use>
+        </svg>
+      </div>
+    </span>
+    <div class="form-hints ui-accordion-content" ng-show="createInput.showTooltip">
+      <p ng-bind-html="config.tooltip"></p>
+    </div>
+  </label>
+  <div ng-class="{'input_error': config.error, 'input_confirmed': config.confirmed}" ng-if="config.type !== 'addAttribute'">
+    <!-- textunique -->
+    <input ng-if="config.type === 'textunique'" type="text" maxlength="140" ng-model="config.tempValue" ng-blur="checkRequirements()">
+    <!-- dropdowndefined -->
+    <input class="input_datalist" ng-if="config.type === 'dropdowndefined'" list="{{config.key}}" ng-model="config.tempValue" ng-blur="checkRequirements()">
+    <datalist id="{{config.key}}" ng-if="config.type === 'dropdowndefined'">
+      <option ng-repeat="ddOption in config.dropdownItems" value="{{ddOption}}">{{ddOption}}</option>
+    </datalist>
+    <!-- dropdownsuggested -->
+    <input class="input_datalist" ng-if="config.type === 'dropdownsuggested'" list="{{config.key}}" ng-model="config.tempValue" ng-blur="checkRequirements()">
+    <datalist id="{{config.key}}" ng-if="config.type === 'dropdownsuggested'">
+      <option ng-repeat="ddOption2 in config.dropdownItems" value="{{ddOption2}}">{{ddOption}}</option>
+    </datalist>
+    <!-- textarea -->
+    <textarea ng-if="config.type === 'textarea'" rows="7" ng-model="config.tempValue" ng-blur="checkRequirements()"></textarea>
+    <input ng-if="config.type === 'number'" type="number" ng-model="config.tempValue" min="0" max="10000" ng-blur="checkRequirements()">
+    <input ng-if="config.type === 'negnumber'" type="number" ng-model="config.tempValue" min="-10000" max="10000" ng-blur="checkRequirements()">
+    <input ng-if="config.type === 'bignumber'" type="number" ng-model="config.tempValue" min="0" max="1000000000" ng-blur="checkRequirements()">
+    <input ng-if="config.type === 'dicenumber'" type="text" ng-model="config.tempValue" ng-blur="checkRequirements()">
+  </div>
+  <div class="input_tooltip input_tooltip_error" ng-show="config.error">{{config.error}}</div>
+</section>

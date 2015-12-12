@@ -1,0 +1,20 @@
+<section class="create-container">
+  <div class="page-container page-small">
+    <h1>Create New {{config.title.singular}}</h1>
+    <p ng-bind-html="config.title.tooltip"></p>
+    <hr>
+    <form>
+      <fieldset ng-repeat="itemInput in config.input">
+        <dd-create-input config="itemInput"></dd-create-input>
+      </fieldset>
+      <div class="hold_btn">
+        <input class="btn confirm-btn" type="submit" value="Submit" ng-click="submit()">
+      </div>
+      <div class="hold_btn">
+        <input class="btn danger-btn" type="reset" value="Reset">
+      </div>
+      <div class="hold_btn">
+        <input class="btn" type="button" value="Go Back" ng-click="changeToOverview()">
+      </div>
+  </div>
+</section>

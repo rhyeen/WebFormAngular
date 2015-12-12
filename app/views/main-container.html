@@ -1,0 +1,14 @@
+<dd-status-bar config="statusBarConfig"></dd-status-bar>
+<dd-extra-container config="extraContainerConfig"></dd-extra-container>
+
+<div ng-controller="ItemSelection" ng-if="mainContainer.view === 'selection'">
+  <dd-item-selection></dd-item-selection>
+</div>
+
+<div ng-controller="OverviewContainer" ng-if="mainContainer.view === 'overview'">
+  <dd-overview-container config="mainContainer.viewConfig.title" items-wrapper="mainContainer.itemsWrapper"></dd-overview-container>
+</div>
+
+<div ng-controller="CreateContainer" ng-if="mainContainer.view === 'create' || mainContainer.view === 'edit'">
+  <dd-create-container config="mainContainer.viewConfig" view="mainContainer.view"></dd-create-container>
+</div>

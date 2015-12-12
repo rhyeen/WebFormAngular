@@ -1,0 +1,37 @@
+/* accordion */
+.create-container label {
+	display:block;
+}
+
+.create-container .ui-accordion-header {
+	cursor:pointer;
+	transition:all .3s;
+}
+
+.create-container .ui-accordion-content {
+	/* it jitters if I don't have this be positive */
+	padding-bottom:1px;
+}
+
+.create-container .form-hints {
+	font-size:14px;
+	text-align:left;
+	color:#999;
+}
+/* END accordion */
+
+/* icons */
+.create-container .icon {
+	width:20px;
+	height:20px;
+	fill:#FFF;	
+	transition:all 0.6s;
+	float:right;
+	z-index: 1;
+}
+
+.create-container .ui-accordion-header:hover .icon {
+	fill:#373737;
+}
+
+/* END icons */

@@ -1,0 +1,31 @@
+<!-- active -->
+<section class="accordian-item">
+  <h3 class="ui-accordion-header" ng-class="{'ui-state-active': config.activeItem === item, 'ui-state-inactive': config.activeItem !== item}" ng-click="selectItem()">
+    {{accordianItem.name}}
+    <span class="mini_btn" ng-if="config.activeItem === item">
+      <div class="icon icon_danger" ng-click="deleteItem()">
+        <svg viewBox="0 0 32 32">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#delete_icon"></use>
+        </svg>
+      </div>
+    </span>
+    <span class="mini_btn" ng-if="config.activeItem === item">
+      <div class="icon icon_inform" ng-click="editItem()">
+        <svg viewBox="0 0 32 32">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#edit_icon"></use>
+        </svg>
+      </div>
+    </span>
+  </h3>
+  <div class="ui-accordion-content" ng-if="config.activeItem === item">
+    <table>
+      <tbody ng-repeat="keyValuePair in accordianItem.keyArray track by $index">
+        <tr ng-if="keyValuePair.value">
+          <td class="title">{{keyValuePair.key}}</td>
+          <td>{{keyValuePair.value}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="table_desc" ng-if="accordianItem.description">{{accordianItem.description}}</p>
+  </div>
+</section>

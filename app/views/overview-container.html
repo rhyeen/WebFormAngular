@@ -1,0 +1,24 @@
+<section class="overview-container">
+  <div class="page-container page-small">
+    <h1>{{config.plural}}</h1>
+    <div class="hold_btn">
+    <a href="" ng-click="changeViewToCategories()">
+      <div class="hold_btn_right">
+        <button class="btn">View Categories</button>
+      </div>
+    </a>
+    </div>
+    <a href="" ng-click="createItem()">
+      <div class="hold_btn_right">
+        <button class="btn confirm-btn">Create {{config.singular}}</button>
+      </div>
+    </a>
+    <!-- <br><hr> -->
+    <br><br><br>
+    <section class="accordian">
+      <div ng-repeat="item in accordianItems track by $index">
+        <dd-accordian-item config="accordianConfig" item="item"></dd-accordian-item>
+      </div>
+    </section>
+  </div>
+</section>

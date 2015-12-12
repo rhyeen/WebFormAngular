@@ -1,0 +1,10 @@
+<section class="item-selection">
+  <div class="page-container page-small">
+    <h1>Categories</h1>
+    <div ng-repeat="itemType in itemTypes track by $index">
+      <div>
+        <a class="category-item" href="" ng-click="selectItem(itemType)"><p>{{itemType.value}}</p></a>
+      </div>
+    </div>
+  </div>
+</section>

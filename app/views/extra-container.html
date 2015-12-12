@@ -1,0 +1,18 @@
+<div id="extra" ng-if="config.show">
+  <div class="popup-box">
+    <div class="icon icon_color_inform">
+      <svg viewBox="0 0 32 32">
+        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#attention_icon"></use>
+      </svg>
+    </div>
+    <p style="text-align:center">{{config.type}} {{config.target}}?</p>
+    <div class="hold_all_btn">
+      <div class="hold_btn">
+        <button id="Arcana_confirmdelete" class="btn danger-btn confirm" ng-click="confirm()">{{config.type}}</button>
+      </div>
+      <div class="hold_btn_right">
+        <button class="btn confirm" ng-click="cancel()">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

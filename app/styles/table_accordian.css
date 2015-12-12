@@ -1,0 +1,66 @@
+/* accordion */
+.overview-container .ui-accordion-header .mini_btn {
+	float:right;
+	margin-left:4px;
+	padding:2px;
+	display:none;
+	margin-top:-6px;	
+}
+
+.overview-container .ui-state-active .mini_btn {
+    display: inherit;
+}
+
+.overview-container .ui-accordion-header {
+	font-weight:400;
+	cursor:pointer;
+	transition:all .0s;
+	padding:10px;
+	margin:0px;
+}
+
+.overview-container .ui-accordion-content {
+	margin: 0px;
+	border:2px solid #373737;
+}
+
+.overview-container .ui-state-inactive:hover {
+	background-color:#DFDFDF;	
+}
+
+.overview-container .ui-state-focus, .ui-state-active {
+	background-color:#373737;
+	color:#FFF;
+}
+/* END accordion */
+
+/* icons */
+.overview-container .icon {
+	width:20px;
+	height:20px;
+	fill: #FFF;	
+	transition:all 0.3s;
+	border-radius:4px;
+	padding:3px;
+}
+
+.overview-container .icon_color_inform {
+	fill: #EBB81D;
+	margin:0 auto;
+	width:40px;
+	height:40px;
+}
+
+.overview-container .icon_danger:hover {
+	background-color:#A7381D;
+}
+
+.overview-container .icon_confirm:hover {
+	background-color:#9DE377;
+}
+
+.overview-container .icon_inform:hover {
+	background-color:#3379B3;
+}
+
+/* END icons */
